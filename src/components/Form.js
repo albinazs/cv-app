@@ -8,11 +8,11 @@ export class Form extends Component {
   render() {
     const { onChange, userInput } = this.props;
     return (
-      <div className="form">
+      <section className="form">
         <Personal onChange={onChange} personalInfo={userInput.personalInfo} />
         <Experience onChange={onChange} experience={userInput.experience} />
         <Education onChange={onChange} education={userInput.education} />
-      </div>
+      </section>
     );
   }
 }

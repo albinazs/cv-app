@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Section from "../utils/Section";
 import Input from "../utils/Input";
+import Textarea from "../utils/Textarea";
 import Button from "../utils/Button";
 
 export class Experience extends Component {
@@ -37,6 +38,12 @@ export class Experience extends Component {
             onChange={onChange}
             value={experience.to}
           ></Input>
+          <Textarea
+            placeholder="Description"
+            name="description"
+            onChange={onChange}
+            value={experience.description}
+          />
           <Button text="Add" />
           <Button text="Delete" className="delete" />
         </Section>

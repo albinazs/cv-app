@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Section from "../utils/Section";
 import Input from "../utils/Input";
+import Textarea from "../utils/Textarea";
 
 export class Personal extends Component {
   render() {
@@ -50,6 +51,12 @@ export class Personal extends Component {
             onChange={onChange}
             value={personalInfo.address}
           ></Input>
+          <Textarea
+            placeholder="Summary"
+            name="summary"
+            onChange={onChange}
+            value={personalInfo.summary}
+          />
         </Section>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Input from "./Input";
 
 export class Section extends Component {
   render() {

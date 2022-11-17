@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 
-export class Input extends Component {
+export class Textarea extends Component {
   render() {
-    const { type, placeholder, name, onChange, inputValue } = this.props;
+    const { placeholder, name, onChange, inputValue } = this.props;
     return (
-      <input
-        type={type}
+      <textarea
         placeholder={placeholder}
         name={name}
         onChange={onChange}
         value={inputValue}
-        maxlength="50"
+        maxlength="350"
       />
     );
   }
 }
 
-export default Input;
+export default Textarea;

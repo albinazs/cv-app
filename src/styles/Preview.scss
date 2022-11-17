@@ -1,0 +1,101 @@
+@import "./_colors.scss";
+
+.preview {
+  .header {
+    color: white;
+    background-color: $primary-blue;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+
+    .fullname {
+      font-size: 3rem;
+    }
+  }
+
+  .main {
+    display: flex;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .content,
+    .contact {
+      padding: 1.5rem;
+    }
+
+    .content {
+      .summary {
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $primary-blue;
+      }
+
+      .experience,
+      .education {
+        padding-top: 1rem;
+      }
+
+      .experience {
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $primary-grey;
+
+        .wrapper {
+          display: flex;
+          margin-top: 1rem;
+
+          .period {
+            margin-right: 1rem;
+            flex-shrink: 0;
+            width: 150px;
+          }
+
+          .description {
+            .company {
+              color: $secondary-grey;
+              font-style: italic;
+              font-weight: bold;
+            }
+
+            .position {
+              font-size: 1.1rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .education {
+        .wrapper {
+          display: flex;
+          margin-top: 1rem;
+
+          .period {
+            margin-right: 1rem;
+            flex-shrink: 0;
+            width: 150px;
+          }
+
+          .description {
+            .university {
+              color: $secondary-grey;
+              font-style: italic;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      color: $secondary-grey;
+      background-color: $primary-grey;
+    }
+  }
+}

@@ -1,9 +1,15 @@
 @import "./_colors.scss";
 
-:root {
- background-color: aliceblue;
-}
-
-h1 {
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   color: $primary-blue;
+  border-bottom: 2px solid #e5e7eb;
+
+  .icon {
+    font-size: 2.2rem;
+  }
 }

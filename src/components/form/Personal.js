@@ -4,7 +4,6 @@ import Input from "../utils/Input";
 
 export class Personal extends Component {
   render() {
-    console.log(this.props);
     const { onChange, personalInfo } = this.props;
     return (
       <div>

@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import "./App.scss";
+import "./styles/App.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
   render() {
-    const {} = this.state;
     return (
       <div className="App">
         <Header />

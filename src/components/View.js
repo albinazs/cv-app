@@ -5,7 +5,7 @@ export class View extends Component {
   render() {
     const { userInput } = this.props;
     return (
-      <div>
+      <div className="view">
         <Personal personalInfo={userInput.personalInfo} />
       </div>
     );

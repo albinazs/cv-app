@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
-import "./../styles/main.scss";
+import "./../styles/Main.scss";
 import Form from "./Form";
 import View from "./View";
-import Input from "./utils/Input";
 
 export class Main extends Component {
   constructor(props) {
@@ -18,6 +17,19 @@ export class Main extends Component {
         email: "",
         address: "",
       },
+      experience: {
+        company: "",
+        position: "",
+        from: "",
+        to: "",
+      },
+      education: {
+        university: "",
+        program: "",
+        degree: "",
+        from: "",
+        to: "",
+      },
     };
 
     this.handleChangePersonal = this.handleChangePersonal.bind(this);
@@ -26,17 +38,16 @@ export class Main extends Component {
   handleChangePersonal(e) {
     const name = e.target.name;
     this.setState({
-      personalInfo: { [name]: e.target.value },
+      personalInfo: { ...this.state.personalInfo, [name]: e.target.value },
     });
   }
 
   render() {
     return (
-      <div>
+      <main>
         <Form onChange={this.handleChangePersonal} userInput={this.state} />
-
         <View userInput={this.state} />
-      </div>
+      </main>
     );
   }
 }

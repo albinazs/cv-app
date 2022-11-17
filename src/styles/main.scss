@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  gap: 1rem;
+  max-width: 1800px;
+  padding: 2rem;
+
+  .form,
+  .view {
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 15px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    .form,
+    .view {
+      width: 100%;
+    }
+  }
+}

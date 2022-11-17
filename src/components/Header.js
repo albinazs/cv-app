@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import "./../styles/header.scss";
+import "./../styles/Header.scss";
+import { FaFileAlt } from "react-icons/fa";
 
 export class Header extends Component {
   render() {
     return (
-      <div>
+      <header>
+        <FaFileAlt className="icon" />
         <h1>CV APP</h1>
-      </div>
+      </header>
     );
   }
 }

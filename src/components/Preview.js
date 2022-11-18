@@ -12,7 +12,7 @@ export class Preview extends Component {
     return (
       <section className="preview">
         <Header personalInfo={userInput.personalInfo} />
-        <div class="main">
+        <div className="main">
           <Content personalInfo={userInput.personalInfo}>
             <Experience experience={userInput.experience} />
             <Education education={userInput.education} />

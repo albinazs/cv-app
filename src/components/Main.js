@@ -10,33 +10,38 @@ export class Main extends Component {
 
     this.state = {
       personalInfo: {
-        firstName: "John",
-        lastName: "Kempinsky",
-        position: "Senior web developer",
-        phone: "+345628292048",
-        email: "johnkempinsky@gmail.com",
-        address: "London, United Kingdom",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.",
+        firstName: "",
+        lastName: "",
+        position: "",
+        phone: "",
+        email: "",
+        address: "",
+        summary: "",
       },
       experience: {
-        company: "ASBIS corporation",
-        position: "Senior web developer",
-        from: "2016",
-        to: "2021",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum",
+        id: uniqid(),
+        company: "",
+        position: "",
+        from: "",
+        to: "",
+        description: "",
       },
+      experiences: [],
       education: {
-        university: "University of Technology, Oklahoma",
-        program: "Computer Science",
-        degree: "Master",
-        from: "2011sdvsvsvssvsvsvsvs",
-        to: "2016",
+        id: uniqid(),
+        university: "",
+        program: "",
+        degree: "",
+        from: "",
+        to: "",
       },
     };
 
     this.handleChangePersonal = this.handleChangePersonal.bind(this);
+    this.handleChangeExperience = this.handleChangeExperience.bind(this);
+    this.handleChangeEducation = this.handleChangeEducation.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
+    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
   }
 
   handleChangePersonal(e) {
@@ -46,10 +51,62 @@ export class Main extends Component {
     });
   }
 
+  handleChangeExperience(e) {
+    const name = e.target.name;
+    this.setState({
+      experience: { ...this.state.experience, [name]: e.target.value },
+    });
+  }
+
+  handleChangeEducation(e) {
+    const name = e.target.name;
+    this.setState({
+      education: { ...this.state.education, [name]: e.target.value },
+    });
+  }
+
+  handleAddExperience() {
+    console.log("add");
+    /*     this.setState({ experiences: [10] }); */
+
+    this.setState((prevState) => {
+      const newExp = [prevState.experience, ...prevState.experiences];
+
+      return {
+        experiences: newExp,
+        experience: {
+          id: uniqid(),
+          company: "",
+          position: "",
+          from: "",
+          to: "",
+          description: "",
+        },
+      };
+    });
+  }
+
+  handleDeleteExperience(id) {
+    console.log("delete");
+    this.setState((prevState) => ({
+      experiences: prevState.experiences.filter(
+        (experience) => experience.id !== id
+      ),
+    }));
+  }
+
   render() {
+    console.log({ state: this.state });
     return (
       <main>
-        <Form onChange={this.handleChangePersonal} userInput={this.state} />
+        <Form
+          onChangePersonal={this.handleChangePersonal}
+          onChangeExperience={this.handleChangeExperience}
+          onChangeEducation={this.handleChangeEducation}
+          onAddExperience={this.handleAddExperience}
+          onDeleteExperience={this.handleDeleteExperience}
+          userInput={this.state}
+        />
         <Preview userInput={this.state} />
       </main>
     );

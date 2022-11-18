@@ -9,7 +9,7 @@ export class Textarea extends Component {
         name={name}
         onChange={onChange}
         value={inputValue}
-        maxlength="350"
+        maxLength="350"
       />
     );
   }

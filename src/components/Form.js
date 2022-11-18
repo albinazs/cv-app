@@ -6,12 +6,30 @@ import Education from "./form/Education";
 
 export class Form extends Component {
   render() {
-    const { onChange, userInput } = this.props;
+    const {
+      onChangePersonal,
+      onChangeExperience,
+      onChangeEducation,
+      onAddExperience,
+      onDeleteExperience,
+      userInput,
+    } = this.props;
     return (
       <section className="form">
-        <Personal onChange={onChange} personalInfo={userInput.personalInfo} />
-        <Experience onChange={onChange} experience={userInput.experience} />
-        <Education onChange={onChange} education={userInput.education} />
+        <Personal
+          onChangePersonal={onChangePersonal}
+          personalInfo={userInput.personalInfo}
+        />
+        <Experience
+          onChangeExperience={onChangeExperience}
+          onAddExperience={onAddExperience}
+          onDeleteExperience={onDeleteExperience}
+          userInput={userInput}
+        />
+        <Education
+          onChangeEducation={onChangeEducation}
+          education={userInput.education}
+        />
       </section>
     );
   }

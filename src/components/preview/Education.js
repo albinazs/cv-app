@@ -6,15 +6,17 @@ export class Education extends Component {
     return (
       <section className="education">
         <div className="title">Education</div>
-        <div class="wrapper">
-          <div class="period">
+        <div className="wrapper">
+          <div className="period">
             <div>
               {education.from} - {education.to}
             </div>
           </div>
-          <div class="description">
+          <div className="description">
             <div className="university">{education.university}</div>
-            <div>{education.program}, {education.degree}</div>
+            <div>
+              {education.program}, {education.degree}
+            </div>
           </div>
         </div>
       </section>

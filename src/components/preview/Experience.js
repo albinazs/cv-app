@@ -6,7 +6,7 @@ export class Experience extends Component {
     return (
       <section className="experience">
         <div className="title">Experience</div>
-        <div class="wrapper">
+        <div className="wrapper">
           <div className="period">
             {experience.from} - {experience.to}
           </div>

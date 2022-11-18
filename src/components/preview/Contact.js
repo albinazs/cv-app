@@ -4,7 +4,7 @@ export class Contact extends Component {
   render() {
     const { personalInfo } = this.props;
     return (
-      <section className="contact">
+      <section className="contact" id="contact">
         <div className="title">Contact</div>
         <div className="subtitle">Phone</div>
         <div>{personalInfo.phone}</div>

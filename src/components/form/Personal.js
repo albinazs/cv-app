@@ -5,7 +5,7 @@ import Textarea from "../utils/Textarea";
 
 export class Personal extends Component {
   render() {
-    const { onChange, personalInfo } = this.props;
+    const { onChangePersonal, personalInfo } = this.props;
     return (
       <div>
         <Section title="Personal Information">
@@ -13,48 +13,48 @@ export class Personal extends Component {
             type="text"
             placeholder="First name"
             name="firstName"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.firstName}
           ></Input>
           <Input
             type="text"
             placeholder="Last name"
             name="lastName"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.lastName}
           ></Input>
           <Input
             type="text"
             placeholder="Position"
             name="position"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.position}
           ></Input>
           <Input
             type="tel"
             placeholder="Mobile phone"
             name="phone"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.phone}
           ></Input>
           <Input
             type="email"
             placeholder="E-mail"
             name="email"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.email}
           ></Input>
           <Input
             type="test"
             placeholder="Address"
             name="address"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.address}
           ></Input>
           <Textarea
             placeholder="Summary"
             name="summary"
-            onChange={onChange}
+            onChange={onChangePersonal}
             value={personalInfo.summary}
           />
         </Section>

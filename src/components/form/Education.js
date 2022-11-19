@@ -2,7 +2,7 @@ import Section from "../utils/Section";
 import Input from "../utils/Input";
 import Button from "../utils/Button";
 
-const Education = ({ onChangeEducation, education }) => {
+const Education = ({ onChangeEducation, onAddEducation, education }) => {
   return (
     <Section title="Education">
       <Input
@@ -40,7 +40,7 @@ const Education = ({ onChangeEducation, education }) => {
         onChange={onChangeEducation}
         value={education.to}
       ></Input>
-      <Button text="Add" />
+      <Button text="Add" onAddEducation={onAddEducation}/>
       <Button text="Delete" className="delete" />
     </Section>
   );

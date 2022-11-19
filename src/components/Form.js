@@ -10,6 +10,7 @@ const Form = (props) => {
     onChangeEducation,
     onAddExperience,
     onDeleteExperience,
+    onAddEducation,
     userInput,
   } = props;
   return (
@@ -26,6 +27,7 @@ const Form = (props) => {
       />
       <Education
         onChangeEducation={onChangeEducation}
+        onAddEducation={onAddEducation}
         education={userInput.education}
       />
     </section>

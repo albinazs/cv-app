@@ -11,7 +11,7 @@ const Preview = ({ userInput }) => {
       <Header personalInfo={userInput.personalInfo} />
       <div className="main">
         <Content personalInfo={userInput.personalInfo}>
-          <Experience experience={userInput.experience} />
+          <Experience userInput={userInput} />
           <Education education={userInput.education} />
         </Content>
         <Contact personalInfo={userInput.personalInfo} />

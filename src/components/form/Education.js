@@ -1,47 +1,25 @@
 import Section from "../utils/Section";
-import Input from "../utils/Input";
-import Button from "../utils/Button";
+import EducationUnit from "./EducationUnit";
 
-const Education = ({ onChangeEducation, onAddEducation, education }) => {
+const Education = (props) => {
+  const { onChangeEducation, onAddEducation, onDeleteEducation, userInput } =
+    props;
+    
   return (
     <Section title="Education">
-      <Input
-        type="text"
-        placeholder="University"
-        name="university"
-        onChange={onChangeEducation}
-        value={education.university}
-      ></Input>
-      <Input
-        type="text"
-        placeholder="Program"
-        name="program"
-        onChange={onChangeEducation}
-        value={education.program}
-      ></Input>
-      <Input
-        type="text"
-        placeholder="Degree"
-        name="degree"
-        onChange={onChangeEducation}
-        value={education.degree}
-      ></Input>
-      <Input
-        type="text"
-        placeholder="From"
-        name="from"
-        onChange={onChangeEducation}
-        value={education.from}
-      ></Input>
-      <Input
-        type="text"
-        placeholder="To"
-        name="to"
-        onChange={onChangeEducation}
-        value={education.to}
-      ></Input>
-      <Button text="Add" onAddEducation={onAddEducation}/>
-      <Button text="Delete" className="delete" />
+      {userInput.educations.map((education) => (
+        <EducationUnit
+          onChangeEducation={onChangeEducation}
+          onDeleteEducation={onDeleteEducation}
+          education={education}
+          key={education.id}
+        />
+      ))}
+      <EducationUnit
+        onChangeEducation={onChangeEducation}
+        onAddEducation={onAddEducation}
+        education={userInput.education}
+      />
     </Section>
   );
 };

@@ -5,8 +5,8 @@ responsive design
 
 functionality:
 
-map for preview
 no empty inputs
-if the only exp/edu deleted - leave only add button (inline condition)
+if the only exp/edu deleted - leave only add button (inline condition) OR disabled input
 load example
 reset button
+abstract away change functions and maybe add/delete as well n

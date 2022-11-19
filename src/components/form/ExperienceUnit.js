@@ -11,7 +11,7 @@ const ExperienceUnit = (props) => {
   } = props;
 
   return (
-    <div>
+    <>
       <Input
         type="text"
         placeholder="Company"
@@ -54,7 +54,7 @@ const ExperienceUnit = (props) => {
           onClick={() => onDeleteExperience(experience.id)}
         />
       )}
-    </div>
+    </>
   );
 };
 

@@ -12,7 +12,7 @@ const Preview = ({ userInput }) => {
       <div className="main">
         <Content personalInfo={userInput.personalInfo}>
           <Experience userInput={userInput} />
-          <Education education={userInput.education} />
+          <Education userInput={userInput} />
         </Content>
         <Contact personalInfo={userInput.personalInfo} />
       </div>

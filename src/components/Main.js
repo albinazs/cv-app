@@ -86,7 +86,7 @@ const Main = () => {
   const handleAddEducation = () => {
     setUserInput((prevState) => ({
       ...prevState,
-      educationss: [...prevState.educations, prevState.education],
+      educations: [...prevState.educations, prevState.education],
       education: {
         id: uniqid(),
         university: "",
@@ -95,6 +95,14 @@ const Main = () => {
         from: "",
         to: "",
       },
+    }));
+  };
+
+  const handleDeleteEducation = (id) => {
+    setUserInput((prevState) => ({
+      educations: prevState.educations.filter(
+        (education) => education.id !== id
+      ),
     }));
   };
 
@@ -107,6 +115,7 @@ const Main = () => {
         onAddExperience={handleAddExperience}
         onDeleteExperience={handleDeleteExperience}
         onAddEducation={handleAddEducation}
+        onDeleteEducation={handleDeleteEducation}
         userInput={userInput}
       />
       <Preview userInput={userInput} />

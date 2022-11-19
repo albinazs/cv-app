@@ -1,34 +1,27 @@
-import React, { Component } from "react";
 import Section from "../utils/Section";
 import ExperienceUnit from "./ExperienceUnit";
 
-export class Experience extends Component {
-  render() {
-    const {
-      onChangeExperience,
-      onAddExperience,
-      onDeleteExperience,
-      userInput,
-    } = this.props;
+const Experience = (props) => {
+  const { onChangeExperience, onAddExperience, onDeleteExperience, userInput } =
+    props;
 
-    return (
-      <Section title="Experience">
-        {userInput.experiences.map((experience) => (
-          <ExperienceUnit
-            onChangeExperience={onChangeExperience}
-            onDeleteExperience={onDeleteExperience}
-            experience={experience}
-            key={experience.id}
-          />
-        ))}
+  return (
+    <Section title="Experience">
+      {userInput.experiences.map((experience) => (
         <ExperienceUnit
           onChangeExperience={onChangeExperience}
-          onAddExperience={onAddExperience}
-          experience={userInput.experience}
+          onDeleteExperience={onDeleteExperience}
+          experience={experience}
+          key={experience.id}
         />
-      </Section>
-    );
-  }
-}
+      ))}
+      <ExperienceUnit
+        onChangeExperience={onChangeExperience}
+        onAddExperience={onAddExperience}
+        experience={userInput.experience}
+      />
+    </Section>
+  );
+};
 
 export default Experience;

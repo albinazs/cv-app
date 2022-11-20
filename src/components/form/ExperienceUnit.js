@@ -10,43 +10,57 @@ const ExperienceUnit = (props) => {
     experience,
   } = props;
 
+  const AddExperience = () => {
+    if (
+      experience.company === "" &&
+      experience.position === "" &&
+      experience.from === "" &&
+      experience.to === "" &&
+      experience.description === ""
+    ) {
+      alert("Please add experience");
+      return;
+    }
+    onAddExperience();
+  };
+
   return (
     <>
       <Input
         type="text"
         placeholder="Company"
         name="company"
-        onChange={onChangeExperience}
+        onChange={(e) => onChangeExperience(e, experience.id)}
         value={experience.company}
       />
       <Input
         type="text"
         placeholder="Position"
         name="position"
-        onChange={onChangeExperience}
+        onChange={(e) => onChangeExperience(e, experience.id)}
         value={experience.position}
       ></Input>
       <Input
         type="text"
         placeholder="From"
         name="from"
-        onChange={onChangeExperience}
+        onChange={(e) => onChangeExperience(e, experience.id)}
         value={experience.from}
       ></Input>
       <Input
         type="text"
         placeholder="To"
         name="to"
-        onChange={onChangeExperience}
+        onChange={(e) => onChangeExperience(e, experience.id)}
         value={experience.to}
       ></Input>
       <Textarea
         placeholder="Description"
         name="description"
-        onChange={onChangeExperience}
+        onChange={(e) => onChangeExperience(e, experience.id)}
         value={experience.description}
       />
-      {onAddExperience && <Button text="Add" onClick={onAddExperience} />}
+      {onAddExperience && <Button text="Add" onClick={AddExperience} />}
       {onDeleteExperience && (
         <Button
           text="Delete"

@@ -19,15 +19,17 @@ const Main = () => {
     }));
   };
 
-  const handleChangeExperience = (e) => {
+  const handleChangeExperience = (e, id) => {
     const name = e.target.name;
+    console.log(id);
+
     setUserInput((prevState) => ({
       ...prevState,
       experience: { ...prevState.experience, [name]: e.target.value },
     }));
   };
 
-  const handleChangeEducation = (e) => {
+  const handleChangeEducation = (e, id) => {
     const name = e.target.name;
     setUserInput((prevState) => ({
       ...prevState,

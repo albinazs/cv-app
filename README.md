@@ -5,6 +5,7 @@ responsive design
 
 functionality:
 
+delete func
 no empty inputs
 if the only exp/edu deleted - leave only add button (inline condition) OR disabled input
 load example

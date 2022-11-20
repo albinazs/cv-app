@@ -4,11 +4,11 @@ const example = {
   personalInfo: {
     firstName: "Sophia",
     lastName: "Smith",
-    title: "Senior Web Developer",
-    address: "California",
-    phoneNumber: "123456789",
+    position: "Senior Web Developer",
+    phone: "123456789",
     email: "sophia@gmail.com",
-    description:
+    address: "California",
+    summary:
       "Experienced web developer adept in all stages of advanced web development. Knowledgeable in user interface, testing, and debugging processes. Bringing forth expertise in design, installation, testing and maintenance of web systems. Equipped with a diverse and promising skill-set. Proficient in an assortment of technologies, including Java, ASP.NET, C#, IIS, Tomcat, and Microsoft SQL Server. Able to effectively self-manage during independent projects, as well as collaborate in a team setting.",
   },
   experiences: [

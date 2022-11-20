@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import uniqid from "uniqid";
 import Form from "./Form";
 import Preview from "./Preview";
+import example from './utils/example.js'
 import "./../styles/Main.scss";
 
 const Main = () => {
@@ -77,6 +78,7 @@ const Main = () => {
 
   const handleDeleteExperience = (id) => {
     setUserInput((prevState) => ({
+      ...prevState,
       experiences: prevState.experiences.filter(
         (experience) => experience.id !== id
       ),
@@ -100,11 +102,23 @@ const Main = () => {
 
   const handleDeleteEducation = (id) => {
     setUserInput((prevState) => ({
+      ...prevState,
       educations: prevState.educations.filter(
         (education) => education.id !== id
       ),
     }));
   };
+
+  const handleLoadExample = () => {
+    setUserInput((prevState) => ({
+      ...prevState,
+      ...example
+    }));
+  }
+
+  const handleReset = () => {
+    console.log('reset')
+  }
 
   return (
     <main>
@@ -116,6 +130,8 @@ const Main = () => {
         onDeleteExperience={handleDeleteExperience}
         onAddEducation={handleAddEducation}
         onDeleteEducation={handleDeleteEducation}
+        onLoadExample = {handleLoadExample}
+        onReset = {handleReset}
         userInput={userInput}
       />
       <Preview userInput={userInput} />

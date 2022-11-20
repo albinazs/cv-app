@@ -1,11 +1,11 @@
 const Textarea = (props) => {
-  const { placeholder, name, onChange, inputValue } = props;
+  const { placeholder, name, onChange, value } = props;
   return (
     <textarea
       placeholder={placeholder}
       name={name}
       onChange={onChange}
-      value={inputValue}
+      value={value}
       maxLength="350"
     />
   );

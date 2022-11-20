@@ -3,7 +3,7 @@ const Education = ({ userInput }) => {
     <section className="education">
       <div className="title">Education</div>
       {userInput.educations.map((education) => (
-        <div className="wrapper">
+        <div className="wrapper" key={education.id}>
           <div className="period">
             <div>
               {education.from} - {education.to}

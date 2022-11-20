@@ -2,38 +2,13 @@ import React, { useState } from "react";
 import uniqid from "uniqid";
 import Form from "./Form";
 import Preview from "./Preview";
-import example from './utils/example.js'
+import emptyCV from "./utils/emptyCV.js";
+import exampleCV from "./utils/exampleCV.js";
 import "./../styles/Main.scss";
 
 const Main = () => {
   const [userInput, setUserInput] = useState({
-    personalInfo: {
-      firstName: "",
-      lastName: "",
-      position: "",
-      phone: "",
-      email: "",
-      address: "",
-      summary: "",
-    },
-    experience: {
-      id: uniqid(),
-      company: "",
-      position: "",
-      from: "",
-      to: "",
-      description: "",
-    },
-    experiences: [],
-    education: {
-      id: uniqid(),
-      university: "",
-      program: "",
-      degree: "",
-      from: "",
-      to: "",
-    },
-    educations: [],
+    ...emptyCV,
   });
 
   const handleChangePersonal = (e) => {
@@ -42,7 +17,6 @@ const Main = () => {
       ...prevState,
       personalInfo: { ...prevState.personalInfo, [name]: e.target.value },
     }));
-    console.log(userInput);
   };
 
   const handleChangeExperience = (e) => {
@@ -112,13 +86,13 @@ const Main = () => {
   const handleLoadExample = () => {
     setUserInput((prevState) => ({
       ...prevState,
-      ...example
+      ...exampleCV,
     }));
-  }
+  };
 
   const handleReset = () => {
-    console.log('reset')
-  }
+    setUserInput(emptyCV);
+  };
 
   return (
     <main>
@@ -130,8 +104,8 @@ const Main = () => {
         onDeleteExperience={handleDeleteExperience}
         onAddEducation={handleAddEducation}
         onDeleteEducation={handleDeleteEducation}
-        onLoadExample = {handleLoadExample}
-        onReset = {handleReset}
+        onLoadExample={handleLoadExample}
+        onReset={handleReset}
         userInput={userInput}
       />
       <Preview userInput={userInput} />

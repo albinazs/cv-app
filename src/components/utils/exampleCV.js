@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-const example = {
+const exampleCV = {
   personalInfo: {
     firstName: "Sophia",
     lastName: "Smith",
@@ -60,4 +60,4 @@ const example = {
   ],
 };
 
-export default example;
+export default exampleCV;

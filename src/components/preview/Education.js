@@ -17,6 +17,19 @@ const Education = ({ userInput }) => {
           </div>
         </div>
       ))}
+      <div className="wrapper" key={userInput.education.id}>
+          <div className="period">
+            <div>
+              {userInput.education.from} - {userInput.education.to}
+            </div>
+          </div>
+          <div className="description">
+            <div className="university">{userInput.education.university}</div>
+            <div>
+              {userInput.education.program}, {userInput.education.degree}
+            </div>
+          </div>
+        </div>
     </section>
   );
 };

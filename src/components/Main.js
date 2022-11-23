@@ -21,20 +21,62 @@ const Main = () => {
 
   const handleChangeExperience = (e, id) => {
     const name = e.target.name;
-    console.log(id);
-
-    setUserInput((prevState) => ({
-      ...prevState,
-      experience: { ...prevState.experience, [name]: e.target.value },
-    }));
+    setUserInput((prevState) => {
+      const isIDinArray = prevState.experiences.some(
+        (experienceItem) => experienceItem.id === id
+      );
+      if (!isIDinArray) {
+        return {
+          ...prevState,
+          experience: {
+            ...prevState.experience,
+            [name]: e.target.value,
+          },
+        };
+      }
+      return {
+        ...prevState,
+        experiences: prevState.experiences.map((experienceItem) => {
+          if (experienceItem.id === id) {
+            return {
+              ...experienceItem,
+              [name]: e.target.value,
+            };
+          }
+          return experienceItem;
+        }),
+      };
+    });
   };
 
   const handleChangeEducation = (e, id) => {
     const name = e.target.name;
-    setUserInput((prevState) => ({
-      ...prevState,
-      education: { ...prevState.education, [name]: e.target.value },
-    }));
+    setUserInput((prevState) => {
+      const isIDinArray = prevState.educations.some(
+        (educationItem) => educationItem.id === id
+      );
+      if (!isIDinArray) {
+        return {
+          ...prevState,
+          education: {
+            ...prevState.education,
+            [name]: e.target.value,
+          },
+        };
+      }
+      return {
+        ...prevState,
+        educations: prevState.educations.map((educationItem) => {
+          if (educationItem.id === id) {
+            return {
+              ...educationItem,
+              [name]: e.target.value,
+            };
+          }
+          return educationItem;
+        }),
+      };
+    });
   };
 
   const handleAddExperience = () => {

@@ -14,6 +14,16 @@ const Experience = ({ userInput }) => {
           </div>
         </div>
       ))}
+      <div className="wrapper" key={userInput.experience.id}>
+        <div className="period">
+          {userInput.experience.from} - {userInput.experience.to}
+        </div>
+        <div className="description">
+          <div className="company">{userInput.experience.company}</div>
+          <div className="position">{userInput.experience.position}</div>
+          <div>{userInput.experience.description}</div>
+        </div>
+      </div>
     </section>
   );
 };
